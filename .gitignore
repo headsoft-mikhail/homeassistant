@@ -8,7 +8,7 @@
 .cloud
 .google.token
 .HA_VERSION
-*.pyc
+.pyc
 home-assistant*
 ip_bans.yaml
 secrets.yaml
