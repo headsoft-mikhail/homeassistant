@@ -16,6 +16,7 @@
     entity_id: 2a0f3b9bf6d81ed56aeaa5c89fcddfe9
     domain: switch
   mode: single
+##
 - id: '0002'
   alias: notify_about_shit_exited
   description: Уведомление о завершении экскремента
@@ -33,6 +34,7 @@
     message: Экскремент завершен
     title: ''
   mode: single
+##
 - id: '0003'
   alias: notify_about_download_completed
   description: Уведомление о завершении загрузки
