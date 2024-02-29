@@ -1,0 +1,21 @@
+# Loads default set of integrations. Do not remove.
+default_config:
+
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+# custom
+input_text:
+  torrent_link:
+    name: torrent_link
+    initial: ""
+
+input_button:
+  add_torrent_button:
+    name: add_torrent
+    icon: mdi:button-pointer

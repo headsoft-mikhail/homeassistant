@@ -1,0 +1,14 @@
+# whitelist
+!*.yaml
+!.gitignore
+!*.md
+
+# blacklist
+.storage
+.cloud
+.google.token
+.HA_VERSION
+home-assistant*
+ip_bans.yaml
+secrets.yaml
+known_devices.yaml
