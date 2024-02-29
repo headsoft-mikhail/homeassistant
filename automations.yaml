@@ -1,4 +1,4 @@
-- id: '0001'
+- id: "0001"
   alias: click_pc_button
   description: Нажать и отжать кнопку компьютера
   trigger:
@@ -17,25 +17,31 @@
     domain: switch
   mode: single
 ##
-- id: '0002'
-  alias: notify_about_shit_exited
-  description: Уведомление о завершении экскремента
+- id: "0002"
+  alias: experiment
+  description: Экскремент
   trigger:
   - platform: device
-    type: turned_off
+    type: turned_on
     device_id: 127c1bda2ec0699ed45b41427566e711
     entity_id: 31b7d07aa67259cc4fa7e97454e72f64
     domain: switch
   condition: []
   action:
+  - delay:
+      milliseconds: 500
+  - type: turn_off
+    device_id: 127c1bda2ec0699ed45b41427566e711
+    entity_id: 31b7d07aa67259cc4fa7e97454e72f64
+    domain: switch
   - device_id: 80170315b7734af4be34c65f305e8f25
     domain: mobile_app
     type: notify
     message: Экскремент завершен
-    title: ''
+    title: ""
   mode: single
 ##
-- id: '0003'
+- id: "0003"
   alias: notify_about_download_completed
   description: Уведомление о завершении загрузки
   trigger:
@@ -54,7 +60,8 @@
       id: '{{trigger.event.data.id}}'
       delete_data: false
   mode: single
-- id: '1709148652112'
+##
+- id: "0004"
   alias: add_new_torrent
   description: Добавить новый торрент transmission
   trigger:
@@ -70,5 +77,5 @@
   - service: transmission.add_torrent
     data:
       entry_id: 1c7e1f3e403600a8f47b2f33f7eb4712
-      torrent: '{{input_text.torrent_link}}'
+      torrent: "{{input_text.torrent_link}}"  # 255 max
   mode: single
