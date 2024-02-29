@@ -60,22 +60,3 @@
       id: '{{trigger.event.data.id}}'
       delete_data: false
   mode: single
-##
-- id: "0004"
-  alias: add_new_torrent
-  description: Добавить новый торрент transmission
-  trigger:
-  - platform: state
-    entity_id:
-    - input_button.add_torrent_button
-  condition:
-  - condition: state
-    entity_id: input_text.torrent_link
-    attribute: min
-    state: '5'
-  action:
-  - service: transmission.add_torrent
-    data:
-      entry_id: 1c7e1f3e403600a8f47b2f33f7eb4712
-      torrent: "{{input_text.torrent_link}}"  # 255 max
-  mode: single

@@ -8,14 +8,3 @@ frontend:
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
-
-# custom
-input_text:
-  torrent_link:
-    name: torrent_link
-    initial: ""
-
-input_button:
-  add_torrent_button:
-    name: add_torrent
-    icon: mdi:button-pointer
