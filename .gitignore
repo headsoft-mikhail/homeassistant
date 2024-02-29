@@ -9,7 +9,6 @@
 .google.token
 .HA_VERSION
 __pycache__
-custom_components
 home-assistant*
 ip_bans.yaml
 secrets.yaml
