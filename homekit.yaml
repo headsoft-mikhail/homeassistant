@@ -1,0 +1,22 @@
+- name: HASS Bridge Custom
+  port: 56320
+  filter:
+    include_entities:
+      - switch.haa_699808 # 5В сухой контакт
+      - switch.outlet_388001 # экскремент
+      - sensor.temperature_sensor
+      - sensor.temperature_sensor_humidity_sensor
+  entity_config:
+    switch.haa_699808:
+      name: "Компьютер"
+    switch.outlet_388001:
+      name: "Экскремент"
+      type: outlet
+    sensor.temperature_sensor:
+      name: T1 Балкон
+      linked_battery_sensor: sensor.temperature_sensor_battery_sensor
+      low_battery_threshold: 25
+    sensor.temperature_sensor_humidity_sensor:
+      name: T1 Балкон
+      linked_battery_sensor: sensor.temperature_sensor_battery_sensor
+      low_battery_threshold: 25
