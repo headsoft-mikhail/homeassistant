@@ -2,61 +2,56 @@
   alias: click_pc_button
   description: Нажать и отжать кнопку компьютера
   trigger:
-    - platform: device
-      type: turned_on
-      device_id: 4b88a0b145ea162ed5926c60e85b7857
-      entity_id: 2a0f3b9bf6d81ed56aeaa5c89fcddfe9
-      domain: switch
+  - platform: state
+    entity_id:
+    - switch.bedroom_dry_contact_5v
+    to: "on"
   condition: []
   action:
-    - delay:
-        milliseconds: 200
-    - type: turn_off
-      device_id: 4b88a0b145ea162ed5926c60e85b7857
-      entity_id: 2a0f3b9bf6d81ed56aeaa5c89fcddfe9
-      domain: switch
+  - delay:
+      milliseconds: 200
+  - service: switch.turn_off
+    target:
+      entity_id: switch.bedroom_dry_contact_5v
+    data: {}
   mode: single
-##
+#####
 - id: "0002"
   alias: experiment
   description: Экскремент
   trigger:
-    - platform: device
-      type: turned_on
-      device_id: 127c1bda2ec0699ed45b41427566e711
-      entity_id: 31b7d07aa67259cc4fa7e97454e72f64
-      domain: switch
+  - platform: state
+    entity_id:
+    - switch.outlet_excrement
+    to: "on"
   condition: []
   action:
-    - delay:
-        milliseconds: 500
-    - type: turn_off
-      device_id: 127c1bda2ec0699ed45b41427566e711
-      entity_id: 31b7d07aa67259cc4fa7e97454e72f64
-      domain: switch
-    - device_id: 80170315b7734af4be34c65f305e8f25
-      domain: mobile_app
-      type: notify
+  - delay:
+      milliseconds: 500
+  - service: switch.turn_off
+    target:
+      entity_id: switch.outlet_excrement
+    data: {}
+  - service: notify.notify
+    data:
       message: Экскремент завершен
-      title: ""
   mode: single
-##
+#####
 - id: "0003"
   alias: notify_about_download_completed
   description: Уведомление о завершении загрузки
   trigger:
-    - platform: event
-      event_type: transmission_downloaded_torrent
+  - platform: event
+    event_type: transmission_downloaded_torrent
   condition: []
   action:
-    - device_id: 80170315b7734af4be34c65f305e8f25
-      domain: mobile_app
-      type: notify
-      message: "{{trigger.event.data.name}}"
+  - service: notify.notify
+    data:
       title: Загрузка завершена
-    - service: transmission.remove_torrent
-      data:
-        entry_id: 1c7e1f3e403600a8f47b2f33f7eb4712
-        id: "{{trigger.event.data.id}}"
-        delete_data: false
+      message: "{{trigger.event.data.name}}"
+  - service: transmission.remove_torrent
+    data:
+      entry_id: 1c7e1f3e403600a8f47b2f33f7eb4712 # transmission integration id
+      id: "{{trigger.event.data.id}}"
+      delete_data: false
   mode: single

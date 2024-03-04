@@ -2,21 +2,21 @@
   port: 56320
   filter:
     include_entities:
-      - switch.haa_699808 # 5В сухой контакт
-      - switch.outlet_388001 # экскремент
-      - sensor.temperature_sensor
-      - sensor.temperature_sensor_humidity_sensor
+      - switch.dry_contact_5v # 5В сухой контакт
+      - switch.outlet_excrement # экскремент
+      - sensor.aqara_t1_1_temperature
+      - sensor.aqara_t1_1_humidity
   entity_config:
-    switch.haa_699808:
+    switch.dry_contact_5v:
       name: "Компьютер"
-    switch.outlet_388001:
+    switch.outlet_excrement:
       name: "Экскремент"
       type: outlet
-    sensor.temperature_sensor:
+    sensor.aqara_t1_1_temperature:
       name: T1 Балкон
-      linked_battery_sensor: sensor.temperature_sensor_battery_sensor
+      linked_battery_sensor: sensor.aqara_t1_1_battery
       low_battery_threshold: 25
-    sensor.temperature_sensor_humidity_sensor:
+    sensor.aqara_t1_1_humidity:
       name: T1 Балкон
-      linked_battery_sensor: sensor.temperature_sensor_battery_sensor
+      linked_battery_sensor: sensor.aqara_t1_1_battery
       low_battery_threshold: 25
