@@ -15,6 +15,7 @@
       # термостаты
       - climate.aqara_radiator_thermostat_e1_1
       - climate.aqara_radiator_thermostat_e1_2
+      - climate.aqara_radiator_thermostat_e1_3
   entity_config:
     # переключатели, розетки
     switch.noname_dry_contact_5v:
@@ -55,4 +56,8 @@
     climate.aqara_radiator_thermostat_e1_2:
       name: Термостат 2 Спальня
       linked_battery_sensor: sensor.aqara_radiator_thermostat_e1_2_battery
+      low_battery_threshold: 30
+    climate.aqara_radiator_thermostat_e1_3:
+      name: Термостат 3 Кухня
+      linked_battery_sensor: sensor.aqara_radiator_thermostat_e1_3_battery
       low_battery_threshold: 30

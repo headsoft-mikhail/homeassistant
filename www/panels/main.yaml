@@ -126,7 +126,7 @@ views:
             entities:
               - sun.sun
             title: Солнце
-      - type: horizontal-stack
+      - type: vertical-stack
         cards:
           - type: thermostat
             entity: climate.aqara_radiator_thermostat_e1_1
@@ -134,6 +134,9 @@ views:
           - type: thermostat
             entity: climate.aqara_radiator_thermostat_e1_2
             name: Батарея у дивана
+          - type: thermostat
+            entity: climate.aqara_radiator_thermostat_e1_3
+            name: Кухня
       - type: vertical-stack
         cards:
           - type: custom:mini-graph-card
@@ -209,6 +212,8 @@ views:
             name: Aqara Термостат E1_1 Спальня
           - entity: sensor.aqara_radiator_thermostat_e1_2_battery
             name: Aqara Термостат E1_2 Спальня
+          - entity: sensor.aqara_radiator_thermostat_e1_3_battery
+            name: Aqara Термостат E1_3 Кухня
       - type: entities
         entities:
           - entity: sensor.iphone_xs_battery_level
