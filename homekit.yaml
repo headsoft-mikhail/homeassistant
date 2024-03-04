@@ -2,41 +2,57 @@
   port: 56320
   filter:
     include_entities:
-      - switch.dry_contact_5v # 5В сухой контакт
-      - switch.outlet_excrement # экскремент
-      - sensor.aqara_t1_1_temperature
-      - sensor.aqara_t1_1_humidity
-      - sensor.aqara_t1_2_temperature
-      - sensor.aqara_t1_2_humidity
-      - sensor.aqara_t1_3_temperature
-      - sensor.aqara_t1_3_humidity
+      # переключатели, розетки
+      - switch.noname_dry_contact_5v
+      - switch.noname_outlet_excrement
+      # датчики
+      - sensor.aqara_sensor_t1_1_temperature
+      - sensor.aqara_sensor_t1_1_humidity
+      - sensor.aqara_sensor_t1_2_temperature
+      - sensor.aqara_sensor_t1_2_humidity
+      - sensor.aqara_sensor_t1_3_temperature
+      - sensor.aqara_sensor_t1_3_humidity
+      # термостаты
+      - climate.aqara_radiator_thermostat_e1_1
+      - climate.aqara_radiator_thermostat_e1_2
   entity_config:
-    switch.dry_contact_5v:
+    # переключатели, розетки
+    switch.noname_dry_contact_5v:
       name: "Компьютер"
-    switch.outlet_excrement:
+    switch.noname_outlet_excrement:
       name: "Экскремент"
       type: outlet
-    sensor.aqara_t1_1_temperature:
+    # датчики
+    sensor.aqara_sensor_t1_1_temperature:
       name: T1 Балкон
-      linked_battery_sensor: sensor.aqara_t1_1_battery
-      low_battery_threshold: 25
-    sensor.aqara_t1_1_humidity:
+      linked_battery_sensor: sensor.aqara_sensor_t1_1_battery
+      low_battery_threshold: 30
+    sensor.aqara_sensor_t1_1_humidity:
       name: T1 Балкон
-      linked_battery_sensor: sensor.aqara_t1_1_battery
-      low_battery_threshold: 25
-    sensor.aqara_t1_2_temperature:
+      linked_battery_sensor: sensor.aqara_sensor_t1_1_battery
+      low_battery_threshold: 30
+    sensor.aqara_sensor_t1_2_temperature:
       name: T1 Кухня
-      linked_battery_sensor: sensor.aqara_t1_2_battery
-      low_battery_threshold: 25
-    sensor.aqara_t1_2_humidity:
+      linked_battery_sensor: sensor.aqara_sensor_t1_2_battery
+      low_battery_threshold: 30
+    sensor.aqara_sensor_t1_2_humidity:
       name: T1 Кухня
-      linked_battery_sensor: sensor.aqara_t1_2_battery
-      low_battery_threshold: 25
-    sensor.aqara_t1_3_temperature:
+      linked_battery_sensor: sensor.aqara_sensor_t1_2_battery
+      low_battery_threshold: 30
+    sensor.aqara_sensor_t1_3_temperature:
       name: T1 Спальня
-      linked_battery_sensor: sensor.aqara_t1_3_battery
-      low_battery_threshold: 25
-    sensor.aqara_t1_3_humidity:
+      linked_battery_sensor: sensor.aqara_sensor_t1_3_battery
+      low_battery_threshold: 30
+    sensor.aqara_sensor_t1_3_humidity:
       name: T1 Спальня
-      linked_battery_sensor: sensor.aqara_t1_3_battery
-      low_battery_threshold: 25
+      linked_battery_sensor: sensor.aqara_sensor_t1_3_battery
+      low_battery_threshold: 30
+    # термостаты
+    climate.aqara_radiator_thermostat_e1_1:
+      name: Термостат 1 Спальня
+      linked_battery_sensor: sensor.aqara_radiator_thermostat_e1_1_battery
+      low_battery_threshold: 30
+    climate.aqara_radiator_thermostat_e1_2:
+      name: Термостат 2 Спальня
+      linked_battery_sensor: sensor.aqara_radiator_thermostat_e1_2_battery
+      low_battery_threshold: 30

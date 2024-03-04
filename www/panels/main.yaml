@@ -126,6 +126,14 @@ views:
             entities:
               - sun.sun
             title: Солнце
+      - type: horizontal-stack
+        cards:
+          - type: thermostat
+            entity: climate.aqara_radiator_thermostat_e1_1
+            name: Батарея у компьютера
+          - type: thermostat
+            entity: climate.aqara_radiator_thermostat_e1_2
+            name: Батарея у дивана
       - type: vertical-stack
         cards:
           - type: custom:mini-graph-card
@@ -133,15 +141,15 @@ views:
             hour24: true
             font_size: 70
             entities:
-              - entity: sensor.aqara_t1_1_temperature
+              - entity: sensor.aqara_sensor_t1_1_temperature
                 name: Балкон
                 show_indicator: true
                 show_state: true
-              - entity: sensor.aqara_t1_2_temperature
+              - entity: sensor.aqara_sensor_t1_2_temperature
                 name: Кухня
                 show_indicator: true
                 show_state: true
-              - entity: sensor.aqara_t1_3_temperature
+              - entity: sensor.aqara_sensor_t1_3_temperature
                 name: Спальня
                 show_indicator: true
                 show_state: true
@@ -150,15 +158,15 @@ views:
             hour24: true
             font_size: 70
             entities:
-              - entity: sensor.aqara_t1_1_humidity
+              - entity: sensor.aqara_sensor_t1_1_humidity
                 name: Балкон
                 show_indicator: true
                 show_state: true
-              - entity: sensor.aqara_t1_2_humidity
+              - entity: sensor.aqara_sensor_t1_2_humidity
                 name: Кухня
                 show_indicator: true
                 show_state: true
-              - entity: sensor.aqara_t1_3_humidity
+              - entity: sensor.aqara_sensor_t1_3_humidity
                 name: Спальня
                 show_indicator: true
                 show_state: true
@@ -170,8 +178,8 @@ views:
     cards:
       - type: entities
         entities:
-          - entity: switch.dry_contact_5v
-          - entity: switch.outlet_excrement
+          - entity: switch.noname_dry_contact_5v
+          - entity: switch.noname_outlet_excrement
         title: Custom
         show_header_toggle: false
         state_color: true
@@ -191,12 +199,16 @@ views:
     cards:
       - type: entities
         entities:
-          - entity: sensor.aqara_t1_1_battery
+          - entity: sensor.aqara_sensor_t1_1_battery
             name: Aqara T1 Балкон
-          - entity: sensor.aqara_t1_2_battery
+          - entity: sensor.aqara_sensor_t1_2_battery
             name: Aqara T1 Кухня
-          - entity: sensor.aqara_t1_3_battery
+          - entity: sensor.aqara_sensor_t1_3_battery
             name: Aqara T1 Спальня
+          - entity: sensor.aqara_radiator_thermostat_e1_1_battery
+            name: Aqara Термостат E1_1 Спальня
+          - entity: sensor.aqara_radiator_thermostat_e1_2_battery
+            name: Aqara Термостат E1_2 Спальня
       - type: entities
         entities:
           - entity: sensor.iphone_xs_battery_level

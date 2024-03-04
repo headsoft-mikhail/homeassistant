@@ -4,7 +4,7 @@
   trigger:
     - platform: state
       entity_id:
-        - switch.dry_contact_5v
+        - switch.noname_dry_contact_5v
       to: "on"
   condition: []
   action:
@@ -12,7 +12,7 @@
         milliseconds: 200
     - service: switch.turn_off
       target:
-        entity_id: switch.dry_contact_5v
+        entity_id: switch.noname_dry_contact_5v
       data: {}
   mode: single
 #####
@@ -22,7 +22,7 @@
   trigger:
     - platform: state
       entity_id:
-        - switch.outlet_excrement
+        - switch.noname_outlet_excrement
       to: "on"
   condition: []
   action:
@@ -30,7 +30,7 @@
         milliseconds: 500
     - service: switch.turn_off
       target:
-        entity_id: switch.outlet_excrement
+        entity_id: switch.noname_outlet_excrement
       data: {}
     - service: notify.notify
       data:
