@@ -2,56 +2,56 @@
   alias: click_pc_button
   description: Нажать и отжать кнопку компьютера
   trigger:
-  - platform: state
-    entity_id:
-    - switch.bedroom_dry_contact_5v
-    to: "on"
+    - platform: state
+      entity_id:
+        - switch.dry_contact_5v
+      to: "on"
   condition: []
   action:
-  - delay:
-      milliseconds: 200
-  - service: switch.turn_off
-    target:
-      entity_id: switch.bedroom_dry_contact_5v
-    data: {}
+    - delay:
+        milliseconds: 200
+    - service: switch.turn_off
+      target:
+        entity_id: switch.dry_contact_5v
+      data: {}
   mode: single
 #####
 - id: "0002"
   alias: experiment
   description: Экскремент
   trigger:
-  - platform: state
-    entity_id:
-    - switch.outlet_excrement
-    to: "on"
+    - platform: state
+      entity_id:
+        - switch.outlet_excrement
+      to: "on"
   condition: []
   action:
-  - delay:
-      milliseconds: 500
-  - service: switch.turn_off
-    target:
-      entity_id: switch.outlet_excrement
-    data: {}
-  - service: notify.notify
-    data:
-      message: Экскремент завершен
+    - delay:
+        milliseconds: 500
+    - service: switch.turn_off
+      target:
+        entity_id: switch.outlet_excrement
+      data: {}
+    - service: notify.notify
+      data:
+        message: Экскремент завершен
   mode: single
 #####
 - id: "0003"
   alias: notify_about_download_completed
   description: Уведомление о завершении загрузки
   trigger:
-  - platform: event
-    event_type: transmission_downloaded_torrent
+    - platform: event
+      event_type: transmission_downloaded_torrent
   condition: []
   action:
-  - service: notify.notify
-    data:
-      title: Загрузка завершена
-      message: "{{trigger.event.data.name}}"
-  - service: transmission.remove_torrent
-    data:
-      entry_id: 1c7e1f3e403600a8f47b2f33f7eb4712 # transmission integration id
-      id: "{{trigger.event.data.id}}"
-      delete_data: false
+    - service: notify.notify
+      data:
+        title: Загрузка завершена
+        message: "{{trigger.event.data.name}}"
+    - service: transmission.remove_torrent
+      data:
+        entry_id: 1c7e1f3e403600a8f47b2f33f7eb4712 # transmission integration id
+        id: "{{trigger.event.data.id}}"
+        delete_data: false
   mode: single

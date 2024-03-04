@@ -6,6 +6,10 @@
       - switch.outlet_excrement # экскремент
       - sensor.aqara_t1_1_temperature
       - sensor.aqara_t1_1_humidity
+      - sensor.aqara_t1_2_temperature
+      - sensor.aqara_t1_2_humidity
+      - sensor.aqara_t1_3_temperature
+      - sensor.aqara_t1_3_humidity
   entity_config:
     switch.dry_contact_5v:
       name: "Компьютер"
@@ -19,4 +23,20 @@
     sensor.aqara_t1_1_humidity:
       name: T1 Балкон
       linked_battery_sensor: sensor.aqara_t1_1_battery
+      low_battery_threshold: 25
+    sensor.aqara_t1_2_temperature:
+      name: T1 Кухня
+      linked_battery_sensor: sensor.aqara_t1_2_battery
+      low_battery_threshold: 25
+    sensor.aqara_t1_2_humidity:
+      name: T1 Кухня
+      linked_battery_sensor: sensor.aqara_t1_2_battery
+      low_battery_threshold: 25
+    sensor.aqara_t1_3_temperature:
+      name: T1 Спальня
+      linked_battery_sensor: sensor.aqara_t1_3_battery
+      low_battery_threshold: 25
+    sensor.aqara_t1_3_humidity:
+      name: T1 Спальня
+      linked_battery_sensor: sensor.aqara_t1_3_battery
       low_battery_threshold: 25
