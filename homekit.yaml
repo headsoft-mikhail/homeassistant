@@ -12,6 +12,8 @@
       - sensor.aqara_sensor_t1_2_humidity
       - sensor.aqara_sensor_t1_3_temperature
       - sensor.aqara_sensor_t1_3_humidity
+      # триггеры для обновления датчиков homepod mini
+      - input_boolean.homepod_temperature_update
       # термостаты
       - climate.aqara_radiator_thermostat_e1_1
       - climate.aqara_radiator_thermostat_e1_2
@@ -48,6 +50,9 @@
       name: T1 Спальня
       linked_battery_sensor: sensor.aqara_sensor_t1_3_battery
       low_battery_threshold: 30
+    # триггеры для обновления датчиков homepod mini
+    input_boolean.homepod_temperature_update:
+      name: update_temperature_ha
     # термостаты
     climate.aqara_radiator_thermostat_e1_1:
       name: Термостат 1 Спальня

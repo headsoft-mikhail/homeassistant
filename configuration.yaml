@@ -9,3 +9,19 @@ automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
 homekit: !include homekit.yaml
+
+input_boolean:
+  homepod_temperature_update:
+    initial: off
+
+template:
+  - trigger:
+      - platform: webhook
+        webhook_id: !secret homepod_temperature_webhook_id
+        allowed_methods:
+          - POST
+        local_only: true
+    sensor:
+      - name: "HomePod Temperature"
+        state: "{{ trigger.json.temperature }}"
+        unit_of_measurement: "°C"

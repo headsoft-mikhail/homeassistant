@@ -144,6 +144,10 @@ views:
             hour24: true
             font_size: 70
             entities:
+              - entity: sensor.homepod_temperature
+                name: homepod
+                show_indicator: true
+                show_state: true
               - entity: sensor.aqara_sensor_t1_1_temperature
                 name: Балкон
                 show_indicator: true
