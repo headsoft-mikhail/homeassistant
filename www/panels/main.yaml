@@ -40,14 +40,15 @@ views:
             state_color: true
           - type: custom:mini-graph-card
             name: SpeedTest
+            hour24: true
+            hours_to_show: 24
+            points_per_hour: 2
+            font_size: 65
             entities:
               - entity: sensor.speedtest_download
                 name: DOWNLOAD
               - entity: sensor.speedtest_upload
                 name: UPLOAD
-            hours_to_show: 24
-            points_per_hour: 2
-            font_size: 65
             show:
               labels: true
       - type: vertical-stack
@@ -122,11 +123,14 @@ views:
                 name: Облачность
                 icon: mdi:cloud
             title: Погода
-          - graph: line
-            type: sensor
-            entity: sensor.openweathermap_temperature
-            detail: 1
+          - type: custom:mini-graph-card
             name: Температура на улице
+            hour24: true
+            font_size: 70
+            hours_to_show: 24
+            points_per_hour: 1
+            entities:
+              - sensor.openweathermap_temperature
           - type: history-graph
             entities:
               - sun.sun
@@ -142,7 +146,7 @@ views:
                   - type: climate-hvac-modes
                     hvac_modes:
                       - heat
-                      - "off"
+                      - 'off'
               - type: thermostat
                 entity: climate.aqara_radiator_thermostat_e1_2
                 name: Батарея у дивана
@@ -150,7 +154,7 @@ views:
                   - type: climate-hvac-modes
                     hvac_modes:
                       - heat
-                      - "off"
+                      - 'off'
           - type: horizontal-stack
             cards:
               - type: humidifier
@@ -166,7 +170,7 @@ views:
                   - type: climate-hvac-modes
                     hvac_modes:
                       - heat
-                      - "off"
+                      - 'off'
       - type: vertical-stack
         cards:
           - type: custom:mini-graph-card
