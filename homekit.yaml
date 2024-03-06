@@ -18,6 +18,8 @@
       - climate.aqara_radiator_thermostat_e1_1
       - climate.aqara_radiator_thermostat_e1_2
       - climate.aqara_radiator_thermostat_e1_3
+      # увлажнители
+      - humidifier.smartmi_humidifier_rainforest_hum_dehum
   entity_config:
     # переключатели, розетки
     switch.noname_dry_contact_5v:
@@ -66,3 +68,7 @@
       name: Термостат 3 Кухня
       linked_battery_sensor: sensor.aqara_radiator_thermostat_e1_3_battery
       low_battery_threshold: 30
+    # увлажнители
+    humidifier.smartmi_humidifier_rainforest_hum_dehum:
+      name: Увлажнитель
+      linked_humidity_sensor: sensor.smartmi_humidifier_rainforest_current_humidity

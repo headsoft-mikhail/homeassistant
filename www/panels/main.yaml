@@ -122,21 +122,51 @@ views:
                 name: Облачность
                 icon: mdi:cloud
             title: Погода
+          - graph: line
+            type: sensor
+            entity: sensor.openweathermap_temperature
+            detail: 1
+            name: Температура на улице
           - type: history-graph
             entities:
               - sun.sun
             title: Солнце
       - type: vertical-stack
         cards:
-          - type: thermostat
-            entity: climate.aqara_radiator_thermostat_e1_1
-            name: Батарея у компьютера
-          - type: thermostat
-            entity: climate.aqara_radiator_thermostat_e1_2
-            name: Батарея у дивана
-          - type: thermostat
-            entity: climate.aqara_radiator_thermostat_e1_3
-            name: Кухня
+          - type: horizontal-stack
+            cards:
+              - type: thermostat
+                entity: climate.aqara_radiator_thermostat_e1_1
+                name: Батарея у компьютера
+                features:
+                  - type: climate-hvac-modes
+                    hvac_modes:
+                      - heat
+                      - "off"
+              - type: thermostat
+                entity: climate.aqara_radiator_thermostat_e1_2
+                name: Батарея у дивана
+                features:
+                  - type: climate-hvac-modes
+                    hvac_modes:
+                      - heat
+                      - "off"
+          - type: horizontal-stack
+            cards:
+              - type: humidifier
+                entity: humidifier.smartmi_humidifier_rainforest_hum_dehum
+                features:
+                  - type: humidifier-toggle
+                name: Увлажнитель
+                show_current_as_primary: false
+              - type: thermostat
+                entity: climate.aqara_radiator_thermostat_e1_3
+                name: Кухня
+                features:
+                  - type: climate-hvac-modes
+                    hvac_modes:
+                      - heat
+                      - "off"
       - type: vertical-stack
         cards:
           - type: custom:mini-graph-card
@@ -145,7 +175,7 @@ views:
             font_size: 70
             entities:
               - entity: sensor.homepod_temperature
-                name: homepod
+                name: HomePod
                 show_indicator: true
                 show_state: true
               - entity: sensor.aqara_sensor_t1_1_temperature
@@ -165,6 +195,10 @@ views:
             hour24: true
             font_size: 70
             entities:
+              - entity: sensor.smartmi_humidifier_rainforest_current_humidity
+                name: Увлажнитель
+                show_indicator: true
+                show_state: true
               - entity: sensor.aqara_sensor_t1_1_humidity
                 name: Балкон
                 show_indicator: true
