@@ -80,9 +80,6 @@
         - input_button.run_speedtest
   condition: []
   action:
-    - service: notify.notify
-      data:
-        message: Кнопка нажата
     - service: homeassistant.update_entity
       data: {}
       target:
