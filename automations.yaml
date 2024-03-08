@@ -71,3 +71,22 @@
       target:
         entity_id: input_boolean.homepod_temperature_update
   mode: single
+- id: "0005"
+  alias: run_speedtest
+  description: Run SpeedTest
+  trigger:
+    - platform: state
+      entity_id:
+        - input_button.run_speedtest
+  condition: []
+  action:
+    - service: notify.notify
+      data:
+        message: Кнопка нажата
+    - service: homeassistant.update_entity
+      data: {}
+      target:
+        entity_id:
+          - sensor.speedtest_download
+          - sensor.speedtest_upload
+  mode: single

@@ -38,19 +38,15 @@ views:
             show_header_toggle: false
             title: Zyxel Gateway
             state_color: true
-          - type: custom:mini-graph-card
-            name: SpeedTest
-            hour24: true
-            hours_to_show: 24
-            points_per_hour: 2
-            font_size: 65
+          - type: entities
+            title: SpeedTest
             entities:
+              - entity: input_button.run_speedtest
+                name: Запуск теста
               - entity: sensor.speedtest_download
-                name: DOWNLOAD
+                name: Загрузка
               - entity: sensor.speedtest_upload
-                name: UPLOAD
-            show:
-              labels: true
+                name: Передача
       - type: vertical-stack
         cards:
           - type: entities
