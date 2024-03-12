@@ -256,6 +256,8 @@ views:
         entities:
           - entity: sensor.iphone_xs_battery_level
           - entity: sensor.iphone_xs_battery_state
+          - entity: sensor.ipad_battery_level
+          - entity: sensor.ipad_battery_state
       - type: custom:mini-graph-card
         entities:
           - entity: sensor.meross_power_meter_outlet_1_energy
