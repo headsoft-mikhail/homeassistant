@@ -219,6 +219,9 @@ views:
     cards:
       - type: entities
         entities:
+          - entity: switch.ahtom_table_light
+          - entity: switch.ahtom_tv_backlight
+          - entity: switch.ahtom_kitchen
           - entity: switch.noname_dry_contact_5v
           - entity: switch.noname_outlet_excrement
         title: Custom

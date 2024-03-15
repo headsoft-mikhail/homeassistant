@@ -3,6 +3,9 @@
   filter:
     include_entities:
       # переключатели, розетки
+      - switch.ahtom_table_light
+      - switch.ahtom_tv_backlight
+      - switch.ahtom_kitchen
       - switch.noname_dry_contact_5v
       - switch.noname_outlet_excrement
       # датчики
@@ -22,6 +25,12 @@
       - humidifier.smartmi_humidifier_rainforest_hum_dehum
   entity_config:
     # переключатели, розетки
+    switch.ahtom_table_light:
+      name: "Свет у компьютера"
+    switch.ahtom_tv_backlight:
+      name: "Ночник"
+    switch.ahtom_kitchen:
+      name: "Свет на кухне"
     switch.noname_dry_contact_5v:
       name: "Компьютер"
     switch.noname_outlet_excrement:
