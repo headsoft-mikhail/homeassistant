@@ -264,6 +264,12 @@ views:
         title: Meross
         show_header_toggle: false
         state_color: true
+      - type: entities
+        entities:
+          - entity: switch.relay1
+          - entity: switch.relay2
+        title: ModBus
+        show_header_toggle: false
   - title: Энергия
     path: energy
     icon: mdi:battery-80
