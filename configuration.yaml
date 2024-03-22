@@ -9,9 +9,11 @@ automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
 homekit: !include homekit.yaml
+modbus: !include modbus.yaml
 
 input_boolean:
   homepod_temperature_update:
+    name: "Триггер запроса температуры HomePod"
     initial: off
 
 template:
