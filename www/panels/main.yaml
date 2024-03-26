@@ -142,7 +142,7 @@ views:
                   - type: climate-hvac-modes
                     hvac_modes:
                       - heat
-                      - 'off'
+                      - "off"
               - type: thermostat
                 entity: climate.aqara_radiator_thermostat_e1_2
                 name: Батарея у дивана
@@ -150,7 +150,7 @@ views:
                   - type: climate-hvac-modes
                     hvac_modes:
                       - heat
-                      - 'off'
+                      - "off"
           - type: horizontal-stack
             cards:
               - type: humidifier
@@ -166,7 +166,7 @@ views:
                   - type: climate-hvac-modes
                     hvac_modes:
                       - heat
-                      - 'off'
+                      - "off"
       - type: vertical-stack
         cards:
           - type: custom:mini-graph-card
@@ -251,7 +251,9 @@ views:
           - entity: switch.ahtom_table_light
           - entity: switch.ahtom_tv_backlight
           - entity: switch.ahtom_kitchen
-          - entity: switch.noname_outlet_excrement
+          - entity: switch.aqara_relay_1ch_pc_switch
+            name: Компьютер
+          - entity: switch.ahtom_outlet_excrement
         title: Custom
         show_header_toggle: false
         state_color: true
@@ -269,7 +271,7 @@ views:
           - entity: switch.relay1
           - entity: switch.relay2
         title: ModBus
-        show_header_toggle: false
+        show_header_toggle: true
   - title: Энергия
     path: energy
     icon: mdi:battery-80

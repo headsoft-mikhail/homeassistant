@@ -6,8 +6,8 @@
       - switch.ahtom_table_light
       - switch.ahtom_tv_backlight
       - switch.ahtom_kitchen
-      - switch.noname_dry_contact_5v
-      - switch.noname_outlet_excrement
+      - switch.ahtom_outlet_excrement
+      - switch.aqara_relay_1ch_pc_switch
       # датчики
       - sensor.aqara_sensor_t1_1_temperature
       - sensor.aqara_sensor_t1_1_humidity
@@ -40,11 +40,11 @@
     switch.ahtom_kitchen:
       name: "Свет на кухне"
       type: outlet
-    switch.noname_dry_contact_5v:
-      name: "Компьютер"
-    switch.noname_outlet_excrement:
+    switch.ahtom_outlet_excrement:
       name: "Экскремент"
       type: outlet
+    switch.aqara_relay_1ch_pc_switch:
+      name: "Компьютер"
     # датчики
     sensor.aqara_sensor_t1_1_temperature:
       name: T1 Балкон

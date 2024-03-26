@@ -4,15 +4,15 @@
   trigger:
     - platform: state
       entity_id:
-        - switch.noname_dry_contact_5v
+        - switch.aqara_relay_1ch_pc_switch
       to: "on"
   condition: []
   action:
     - delay:
-        milliseconds: 200
+        milliseconds: 400
     - service: switch.turn_off
       target:
-        entity_id: switch.noname_dry_contact_5v
+        entity_id: switch.aqara_relay_1ch_pc_switch
       data: {}
   mode: single
 - id: "0002"
@@ -21,7 +21,7 @@
   trigger:
     - platform: state
       entity_id:
-        - switch.noname_outlet_excrement
+        - switch.ahtom_outlet_excrement
       to: "on"
   condition: []
   action:
@@ -29,7 +29,7 @@
         milliseconds: 500
     - service: switch.turn_off
       target:
-        entity_id: switch.noname_outlet_excrement
+        entity_id: switch.ahtom_outlet_excrement
       data: {}
     - service: notify.notify
       data:
